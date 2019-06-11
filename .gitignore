@@ -3,3 +3,4 @@
 *.so
 patcher
 tests/rax-corruption
+tests/yaml

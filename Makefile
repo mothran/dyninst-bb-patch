@@ -14,5 +14,12 @@ libruntime.so:
 patcher: libruntime.so
 	$(CXX) $(CXXFLAGS) -o patcher patcher.cpp $(PATCHER_LIBS)
 
+# Tests
+yaml:
+	$(CXX) -O3 -o tests/yaml ./tests/yaml.cpp -lyaml
+
+rax-corruption:
+	$(CC) -O3 -o tests/rax-corruption ./tests/rax-corruption.c
+
 clean:
-	rm -f patcher libruntime.so
+	rm -f patcher libruntime.so tests/rax-corruption tests/yaml
