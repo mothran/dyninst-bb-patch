@@ -20,3 +20,11 @@ make
 ```bash
 LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:. /path/to/output_bin
 ```
+
+## Test requirements
+
+### yaml
+
+Ubuntu 18.04 package:
+
+* libyaml-dev
