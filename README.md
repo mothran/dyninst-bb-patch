@@ -1,16 +1,17 @@
 # Simple patcher repro
 
-## Building
+## Building / setup
 
 ```bash
-DYNINST_ROOT=/path/to/dyninst make
+export DYNINST_ROOT=/path/to/dyninst
+export LD_LIBRARY_PATH=${DYNINST_ROOT}/lib
+export DYNINSTAPI_RT_LIB=${LD_LIBRARY_PATH}/libdyninstAPI_RT.so
+make
 ```
 
 ## Patching
 
 ```bash
-export LD_LIBRARY_PATH=/path/to/dyninstroot/
-export DYNINSTAPI_RT_LIB=${LD_LIBRARY_PATH}/libdyninstAPI_RT.so
 ./patcher /path/to/target /path/to/output_bin
 ```
 
