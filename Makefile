@@ -16,7 +16,7 @@ patcher: libruntime.so
 
 # Tests
 yaml:
-	$(CXX) -O3 -o tests/yaml ./tests/yaml.cpp -lyaml
+	$(CXX) -O3 -o tests/yaml ./tests/yaml.cpp /usr/lib/x86_64-linux-gnu/libyaml.a
 
 rax-corruption:
 	$(CC) -O3 -o tests/rax-corruption ./tests/rax-corruption.c
