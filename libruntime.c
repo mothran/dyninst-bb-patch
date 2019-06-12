@@ -23,18 +23,18 @@ typedef struct bbtrace {
 
 static inline uint64_t get_pidtid(uint32_t type)
 {
-	pid_t tid;
+    pid_t tid;
     pid_t pid;
 
-	tid = (pid_t) (intptr_t) pthread_getspecific(tid_key);
-	if(!tid)
-	{
-		tid = syscall(SYS_gettid);
-		pthread_setspecific(tid_key, (void *) (intptr_t) tid);
-		pid = getpid();
-	}
+    tid = (pid_t) (intptr_t) pthread_getspecific(tid_key);
+    if(!tid)
+    {
+        tid = syscall(SYS_gettid);
+        pthread_setspecific(tid_key, (void *) (intptr_t) tid);
+        pid = getpid();
+    }
 
-	return LOG_PIDTID(type, pid, tid);
+    return LOG_PIDTID(type, pid, tid);
 }
 
 
